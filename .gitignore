@@ -1,0 +1,277 @@
+# =====================================================================
+#  Универсальный .gitignore
+# =====================================================================
+
+
+# ---------------------------------------------------------------------
+#  Секреты и локальные настройки — НИКОГДА не коммитить
+# ---------------------------------------------------------------------
+.env
+.env.*
+!.env.example
+!.env.sample
+!.env.template
+*.env.local
+.streamlit/secrets.toml
+http-client.private.env.json
+*.pem
+*.p12
+*.pfx
+*.jks
+*.keystore
+# Ключи сервисных аккаунтов и OAuth (Google API и т.п.)
+credentials.json
+client_secret*.json
+service-account*.json
+
+
+# ---------------------------------------------------------------------
+#  VS Code
+# ---------------------------------------------------------------------
+# Личные настройки игнорируем, общие для проекта оставляем
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+.history/
+*.vsix
+
+
+# ---------------------------------------------------------------------
+#  JetBrains: IntelliJ IDEA, PyCharm, Android Studio, Fleet
+# ---------------------------------------------------------------------
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+.fleet/
+
+
+# ---------------------------------------------------------------------
+#  Python
+# ---------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Сборка и пакеты
+build/
+dist/
+*.egg-info/
+.eggs/
+*.egg
+wheels/
+pip-wheel-metadata/
+.pdm-build/
+.pdm-python
+
+# Виртуальные окружения
+.venv/
+venv/
+env/
+ENV/
+.conda/
+
+# Тесты, линтеры, типизация
+.pytest_cache/
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+.tox/
+.nox/
+.hypothesis/
+.mypy_cache/
+.dmypy.json
+.ruff_cache/
+.pytype/
+.pyre/
+
+
+# ---------------------------------------------------------------------
+#  Jupyter
+# ---------------------------------------------------------------------
+.ipynb_checkpoints/
+.virtual_documents/
+
+
+# ---------------------------------------------------------------------
+#  ML: служебные папки библиотек и трекеров экспериментов
+# ---------------------------------------------------------------------
+catboost_info/
+mlruns/
+wandb/
+lightning_logs/
+.optuna/
+
+
+# ---------------------------------------------------------------------
+#  Node.js / фронтенд
+# ---------------------------------------------------------------------
+node_modules/
+.npm/
+.pnpm-store/
+.yarn/cache/
+.yarn/install-state.gz
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.eslintcache
+.parcel-cache/
+.next/
+.nuxt/
+.svelte-kit/
+.vite/
+coverage/
+
+
+# ---------------------------------------------------------------------
+#  Java / Kotlin / Gradle / Maven
+# ---------------------------------------------------------------------
+*.class
+*.jar
+*.war
+*.ear
+# Gradle Wrapper нужен в репозитории — не игнорируем
+!**/gradle/wrapper/gradle-wrapper.jar
+.gradle/
+.kotlin/
+target/
+hs_err_pid*
+replay_pid*
+
+
+# ---------------------------------------------------------------------
+#  Android
+# ---------------------------------------------------------------------
+local.properties
+captures/
+.externalNativeBuild/
+.cxx/
+.navigation/
+*.apk
+*.aab
+*.ap_
+*.dex
+*.hprof
+# Раскомментируйте, если не хотите хранить ключи Firebase в репозитории:
+# google-services.json
+
+
+# ---------------------------------------------------------------------
+#  PHP / Composer / 1С-Битрикс
+# ---------------------------------------------------------------------
+vendor/
+# Кеш и файлы с паролями к БД Битрикс
+bitrix/cache/
+bitrix/managed_cache/
+bitrix/stack_cache/
+bitrix/html_pages/
+bitrix/backup/
+bitrix/tmp/
+bitrix/.settings.php
+bitrix/.settings_extra.php
+bitrix/php_interface/dbconn.php
+# Раскомментируйте, если ядро и загрузки не хранятся в репозитории:
+# bitrix/modules/
+# upload/
+
+
+# ---------------------------------------------------------------------
+#  Данные, DWH, базы
+# ---------------------------------------------------------------------
+dbt_packages/
+airflow.db
+airflow-webserver.pid
+*.sqlite3-journal
+*.db-journal
+
+
+# ---------------------------------------------------------------------
+#  Логи и временные файлы
+# ---------------------------------------------------------------------
+*.log
+logs/
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+*~
+.cache/
+tmp/
+
+
+# ---------------------------------------------------------------------
+#  Временные файлы MS Office (блокировки открытых документов)
+# ---------------------------------------------------------------------
+~$*
+
+
+# ---------------------------------------------------------------------
+#  Windows
+# ---------------------------------------------------------------------
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.lnk
+*.stackdump
+
+
+# ---------------------------------------------------------------------
+#  macOS
+# ---------------------------------------------------------------------
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+.fseventsd
+.DocumentRevisions-V100
+.TemporaryItems
+.VolumeIcon.icns
+.AppleDB
+.AppleDesktop
+
+
+# ---------------------------------------------------------------------
+#  Linux
+# ---------------------------------------------------------------------
+.directory
+.Trash-*
+.nfs*
+
+
+# --- Большие данные (GitHub не принимает файлы больше 100 МБ) ---
+# data/raw/
+# data/external/
+# *.parquet
+# *.feather
+# *.h5
+# *.hdf5
+
+# --- Обученные модели и веса ---
+# models/
+# *.pkl
+# *.joblib
+# *.pt
+# *.pth
+# *.ckpt
+# *.onnx
+# *.safetensors
+
+# --- TensorBoard ---
+# runs/
+
+# --- Локальные базы SQLite ---
+# *.db
+# *.sqlite
+# *.sqlite3
